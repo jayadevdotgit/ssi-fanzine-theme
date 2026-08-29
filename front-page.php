@@ -98,12 +98,12 @@ get_header();
         <div class="article-grid">
 
             <?php
-            $latest_query = new WP_Query(array(
-                'post_type'      => 'post',
-                'posts_per_page' => 6,
-                'post_status'    => 'publish',
-                'offset'         => 1,
-            ));
+           $latest_query = new WP_Query(array(
+            'post_type'      => 'post',
+            'posts_per_page' => 6,
+            'post_status'    => 'publish',
+            'post__not_in'   => array($featured_post_id),
+        ));
 
             if ($latest_query->have_posts()) :
 
@@ -220,6 +220,7 @@ get_header();
             'posts_per_page' => 3,
             'post_status'    => 'publish',
             'cat'            => $category->term_id,
+            'post__not_in'   => array($featured_post_id),
         ));
 
 

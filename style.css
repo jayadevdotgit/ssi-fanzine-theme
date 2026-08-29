@@ -1,0 +1,507 @@
+/*
+Theme Name: SSI FANZINE
+Author: SSI FANZINE
+Description: Lightweight custom sports news and magazine theme.
+Version: 1.0.0
+Text Domain: ssi-fanzine
+*/
+
+:root {
+    --text: #111111;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --background: #ffffff;
+    --surface: #f7f7f7;
+    --accent: #e11d2e;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+.site-container {
+    width: min(var(--max-width), calc(100% - 40px));
+    margin-inline: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-main {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.site-logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.main-navigation a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mobile-menu-button {
+    display: none;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.site-main {
+    padding: 45px 0 70px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 25px;
+    letter-spacing: -0.5px;
+}
+
+.section-title a {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================
+   FEATURED STORY
+========================= */
+
+.featured-story {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    min-height: 460px;
+    margin-bottom: 55px;
+    overflow: hidden;
+    background: #111;
+}
+
+.featured-image {
+    min-height: 460px;
+    background: #ddd;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.post-category {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featured-content h1 {
+    margin: 0 0 18px;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.post-excerpt {
+    margin: 0 0 22px;
+    color: #d1d5db;
+}
+
+.post-meta {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.featured-content .post-meta {
+    color: #aaa;
+}
+
+/* =========================
+   ARTICLE GRID
+========================= */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.article-card {
+    min-width: 0;
+}
+
+.article-image {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.03);
+}
+
+.article-card h3 {
+    margin: 5px 0 8px;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+.article-card .post-excerpt {
+    color: #555;
+    font-size: 14px;
+}
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.category-section {
+    padding-top: 50px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    padding: 45px 0;
+    border-top: 1px solid var(--border);
+    background: #111;
+    color: #fff;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-description {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .site-container {
+        width: min(100% - 28px, var(--max-width));
+    }
+
+    .header-main {
+        min-height: 68px;
+    }
+
+    .site-logo {
+        font-size: 22px;
+    }
+
+    .main-navigation {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+        border: 0;
+        background: transparent;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .site-main {
+        padding-top: 28px;
+    }
+
+    .featured-story {
+        display: block;
+        min-height: 0;
+    }
+
+    .featured-image {
+        min-height: 260px;
+        aspect-ratio: 16 / 10;
+    }
+
+    .featured-content {
+        padding: 28px 24px 32px;
+    }
+
+    .featured-content h1 {
+        font-size: 32px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .article-card h3 {
+        font-size: 21px;
+    }
+
+    .footer-inner {
+        display: block;
+    }
+}
+
+/* =========================
+   SINGLE ARTICLE
+========================= */
+
+.single-article {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.single-header {
+    max-width: 850px;
+    margin: 0 auto 35px;
+}
+
+.single-header h1 {
+    margin: 8px 0 20px;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.single-meta {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.single-meta a {
+    font-weight: 600;
+}
+
+.single-featured-image {
+    margin: 0 0 40px;
+}
+
+.single-featured-image img {
+    width: 100%;
+}
+
+.single-content {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.single-content p {
+    margin: 0 0 25px;
+}
+
+.single-content h2,
+.single-content h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    margin-top: 45px;
+}
+
+.single-content img {
+    margin: 30px 0;
+}
+
+.single-footer {
+    max-width: 720px;
+    margin: 55px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.article-categories a {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background: var(--surface);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+
+    .single-header h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .single-content {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .single-featured-image {
+        margin-left: -14px;
+        margin-right: -14px;
+    }
+}
+
+/* =========================
+   ARCHIVES
+========================= */
+
+.archive-header {
+    padding: 20px 0 45px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.archive-header h1 {
+    margin: 5px 0 12px;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.archive-description {
+    max-width: 650px;
+    color: var(--muted);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.nav-links a,
+.nav-links span {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+}
+
+/* =========================
+   AUTHOR PAGE
+========================= */
+
+.author-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0 45px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid var(--border);
+}
+
+.author-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h1 {
+    margin: 5px 0 10px;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+.author-info p {
+    max-width: 600px;
+    margin: 0;
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+
+    .author-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .author-avatar img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .author-info h1 {
+        font-size: 38px;
+    }
+}

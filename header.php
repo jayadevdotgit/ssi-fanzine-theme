@@ -16,58 +16,87 @@
 
     <div class="site-container header-main">
 
-        <a class="site-logo" href="<?php echo esc_url(home_url('/')); ?>">
+        <a
+            class="site-logo"
+            href="<?php echo esc_url(home_url('/')); ?>"
+        >
             SSI FANZINE
         </a>
 
-        <nav class="main-navigation" aria-label="Primary navigation">
+        <?php
+        $navigation_categories = get_categories(array(
+            'hide_empty' => true,
+            'parent'     => 0,
+            'orderby'    => 'name',
+            'order'      => 'ASC',
+        ));
+        ?>
+
+        <div class="header-actions">
+
+            <nav
+                class="main-navigation"
+                aria-label="Primary navigation"
+            >
+
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    Latest
+                </a>
+
+                <?php foreach ($navigation_categories as $category) : ?>
+
+                    <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                        <?php echo esc_html($category->name); ?>
+                    </a>
+
+                <?php endforeach; ?>
+
+                <a href="<?php echo esc_url(home_url('/?s=')); ?>">
+                    Search
+                </a>
+
+            </nav>
+
+
+            <button
+                class="mobile-menu-button"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="mobile-navigation">
+
+        <div class="site-container">
 
             <a href="<?php echo esc_url(home_url('/')); ?>">
                 Latest
             </a>
 
-            <?php
-            $navigation_categories = array(
-                'Cricket',
-                'Football',
-                'Athletics',
-                'Hockey'
-            );
-
-            foreach ($navigation_categories as $category_name) :
-
-                $category = get_category_by_slug(
-                    sanitize_title($category_name)
-                );
-
-                if ($category) :
-            ?>
+            <?php foreach ($navigation_categories as $category) : ?>
 
                 <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
                     <?php echo esc_html($category->name); ?>
                 </a>
 
-            <?php
-                endif;
-            endforeach;
-            ?>
+            <?php endforeach; ?>
 
             <a href="<?php echo esc_url(home_url('/?s=')); ?>">
                 Search
             </a>
 
-        </nav>
-
-        <button
-            class="mobile-menu-button"
-            type="button"
-            aria-label="Open menu"
-        >
-            ☰
-        </button>
+        </div>
 
     </div>
 
 </header>
+
 
 <main class="site-main">

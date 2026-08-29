@@ -27,7 +27,7 @@ add_action('after_setup_theme', 'ssi_fanzine_setup');
 
 
 /**
- * Load theme stylesheet
+ * Load theme styles and scripts
  */
 
 function ssi_fanzine_assets() {
@@ -37,6 +37,14 @@ function ssi_fanzine_assets() {
         get_stylesheet_uri(),
         array(),
         '1.0.0'
+    );
+
+    wp_enqueue_script(
+        'ssi-fanzine-menu',
+        get_template_directory_uri() . '/assets/js/menu.js',
+        array(),
+        '1.0.0',
+        true
     );
 }
 

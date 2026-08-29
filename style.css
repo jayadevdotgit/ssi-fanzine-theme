@@ -505,3 +505,78 @@ a:hover {
         font-size: 38px;
     }
 }
+
+/* =========================
+   404 PAGE
+========================= */
+
+.error-page {
+    max-width: 700px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.error-page h1 {
+    margin: 10px 0 15px;
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.error-page p {
+    margin: 0 auto 25px;
+    max-width: 500px;
+    color: var(--muted);
+}
+
+.error-home-link {
+    display: inline-block;
+    padding: 11px 18px;
+    background: var(--text);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.error-home-link:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobile-navigation {
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .mobile-navigation {
+        padding: 10px 14px 20px;
+        border-top: 1px solid var(--border);
+    }
+
+    .mobile-navigation.is-open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-navigation a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 15px;
+        font-weight: 600;
+    }
+}

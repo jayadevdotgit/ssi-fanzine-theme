@@ -1,0 +1,18 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Logs
+*.log

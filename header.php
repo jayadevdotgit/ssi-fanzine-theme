@@ -144,6 +144,11 @@
                 <?php endif; ?>
 
                 <a class="header-search" href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" aria-label="<?php esc_attr_e( 'Search articles', 'ssi-fanzine' ); ?>"><?php ssi_fanzine_search_icon(); ?></a>
+                <?php if ( is_user_logged_in() ) : ?>
+                    <a class="header-login-button" href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>">Logout</a>
+                <?php else : ?>
+                    <a class="header-login-button" href="<?php echo esc_url( home_url( '/login/' ) ); ?>">Login</a>
+                <?php endif; ?>
 
             </nav>
 
@@ -178,6 +183,11 @@
             <a href="<?php echo esc_url( $all_sports_url ); ?>">More / All Sports</a>
 
             <a href="<?php echo esc_url( home_url( '/?s=' ) ); ?>">Search</a>
+            <?php if ( is_user_logged_in() ) : ?>
+                <a class="mobile-login-link" href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>">Logout</a>
+            <?php else : ?>
+                <a class="mobile-login-link" href="<?php echo esc_url( home_url( '/login/' ) ); ?>">Login</a>
+            <?php endif; ?>
 
             <?php if ( class_exists( 'WooCommerce' ) ) : ?>
 

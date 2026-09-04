@@ -15,7 +15,7 @@ $current_post_id = 0;
 
             <?php $current_post_id = get_the_ID(); ?>
 
-            <aside class="single-sidebar single-sidebar-left" aria-label="Article navigation">
+            <aside class="single-sidebar single-sidebar-left ssi-compact-sidebar" aria-label="Article navigation">
 
                 <section class="single-side-section">
                     <div class="section-title"><h2>Trending Now</h2></div>
